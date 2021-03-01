@@ -1,4 +1,8 @@
 @import "_reset.scss";
+@mixin font-size($size) {
+  font-size: ($size / 16) + rem;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -324,23 +328,38 @@ header {
   transform: translateX(0);
 }
 
-.video-box{
+.video-box {
   width: 100%;
   height: 100vh;
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
-.video-box>video{
+
+.video-box>video {
   object-fit: cover;
   width: 100%;
   height: 100vh;
   opacity: 0.5;
 }
-.content{
-  background-color: rgba(15, 223, 15,0.3);
+
+.content {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: rgba(15, 223, 15, 0.3);
+  text-align: center;
 }
-.content>p{
+
+h2 {
+  @include font-size(15);
+  padding: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.content>p {
+  font-family: 'Courier New', Courier, monospace;
   font-size: 1.5rem;
+  padding: 20px;
 }
